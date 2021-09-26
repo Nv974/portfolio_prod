@@ -1,0 +1,158 @@
+@use "../vars";
+
+.nav,
+.nav--active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: none;
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: vars.$dark;
+
+  &__burger{
+    display: none;
+  }
+
+  &--active {
+    background-color: vars.$main;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    span {
+      color: black;
+    }
+  }
+
+  &__title,
+  &__title--active {
+    padding-left: 1.5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    span {
+      color: vars.$main;
+    }
+
+    &--active {
+      span {
+        color: black;
+      }
+    }
+  }
+
+  &__link,
+  &__link--active {
+    list-style: none;
+    display: flex;
+    margin-right: 2rem;
+
+    li {
+      padding: 0 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+
+      a {
+        text-decoration: none;
+        color: white;
+        transition: 0.4s;
+        cursor: pointer;
+
+        &:hover {
+          color: vars.$main;
+        }
+      }
+    }
+
+    &--active {
+      li {
+        a {
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  animation: blur 0.3s;
+}
+
+.nav--active {
+  animation: drop 0.4s;
+}
+
+//ANIMATIONS
+
+@keyframes blur {
+  0% {
+    filter: blur(6px);
+  }
+
+  100% {
+    filter: blur(0);
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav {
+    &__title,
+    &__title--active {
+      font-size: 1.3rem;
+    }
+
+    &__link,
+    &__link--active {
+      li {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nav, .nav--active {
+    position: fixed ;
+    top: 0;
+    left: 0;
+    background-color: vars.$dark;
+    animation: none;
+    &__link,
+    &__link--active {
+      display: none;
+    }
+    &__burger {
+      display: block;
+      color: white;
+      position: absolute;
+      right: 2rem;
+      font-size: 2.5rem;
+      transform: rotateZ(90deg);
+      cursor: pointer;
+    }
+  }
+
+  .nav__title--active{
+    span{
+      color: vars.$main;
+    }
+  }
+
+}

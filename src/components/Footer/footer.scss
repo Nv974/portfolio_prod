@@ -1,0 +1,11 @@
+.footer{
+    color: white;
+    position: relative;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 0.7rem;
+
+    @media screen and (max-width : 800px) {
+        margin-top: 2rem;
+    }
+}

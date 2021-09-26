@@ -1,0 +1,9 @@
+@use "../vars";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Ubuntu:wght@400&display=swap');
+.app {
+    font-family: Ubuntu;
+    width: 100vw;
+    background-color: vars.$dark;
+    font-size: 1.1em;
+    overflow-x: hidden;
+}

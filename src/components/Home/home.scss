@@ -1,0 +1,126 @@
+@use "../vars";
+
+.home {
+  background-color: vars.$dark;
+  width: 90vw;
+  margin: 0 auto;
+  height: calc(100vh - 5rem);
+  position: relative;
+  margin-top: 5rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2rem;
+
+    &__button {
+      button {
+        border: none;
+        background-color: vars.$main;
+        padding: 1rem;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 10rem;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: white;
+          font-weight: bold;
+          color: vars.$main;
+        }
+      }
+    }
+  }
+
+  &__center {
+    img {
+      width: 25rem;
+    }
+  }
+
+  &__right {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__avatar {
+      width: 13rem;
+      margin-bottom: 2rem;
+    }
+
+    &__infos {
+      position: absolute;
+      top : calc(100% + 2rem);
+
+      a{
+        color: white;
+      }
+
+      &--show{
+        display: block;
+      }
+    }
+
+    &__social {
+      img{
+        cursor: pointer;
+      }
+      &__logo {
+        &--dark {
+          filter: invert(1);
+        }
+
+        &--dark,
+        &--light {
+          width: 1.5rem;
+          margin: 0 0.5rem;
+          
+          &:hover {
+              opacity: 0.5;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+@media screen and (max-width : 1000px) {
+  .home {
+    flex-wrap: wrap;
+    text-align: center;
+    &__left{
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    &__center{
+      img{
+        width: 20rem;
+      }
+    }
+
+    &__right{
+        display: none;
+    }
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .home {
+    justify-content: center;
+  }
+  
+}
