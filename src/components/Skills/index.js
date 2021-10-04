@@ -21,7 +21,7 @@ const Skills = () => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <div className="skills">
+    <div className="skills" id="Competences">
       <h2>Les Technologies</h2>
       <div className="skills__technos">
         <div data-aos="fade-right" className="skills__technos__front">
@@ -80,7 +80,7 @@ const Skills = () => {
           </div>
           <div className="skills__environnement__technos__ubuntu">
             <img src={ubuntu} alt="linux ubuntu" />
-            <div>Ububtu</div>
+            <div>Ubuntu</div>
           </div>
           <div className="skills__environnement__technos__git">
             <img src={git} alt="git" />

@@ -41,7 +41,7 @@ const Contact = () => {
   const sendMessage = (event) => {
     event.preventDefault();
 
-   /* emailjs
+   emailjs
       .sendForm(
         "service_v6uky3m",
         "template_sc10diy",
@@ -58,11 +58,11 @@ const Contact = () => {
           notSend();
         }
       );
-    event.target.reset();*/
+    event.target.reset();
   };
 
   return (
-    <div className="contact">
+    <div className="contact" id="Contact">
       <h2>Contactez-moi !</h2>
       <div className="contact__wrapper">
         <div className="contact__wrapper__left">

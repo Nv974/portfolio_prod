@@ -31,7 +31,7 @@ const Projects = () => {
   });
 
   return (
-    <div className="projects">
+    <div className="projects" id="Projets">
       <h2>Les projets</h2>
       <div className="projects__mobile-chevron">
         <img src={leftChevron} alt="back" onClick={previousProject} />

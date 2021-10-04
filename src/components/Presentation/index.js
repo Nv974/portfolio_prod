@@ -11,7 +11,7 @@ const Presentation = () => {
   
 
   return (
-    <div className="presentation">
+    <div className="presentation" id="Presentation" >
       <div className="presentation__top">
         <h2 className="presentation__top__title">A propos de moi</h2>
       </div>

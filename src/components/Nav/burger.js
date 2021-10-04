@@ -4,8 +4,11 @@ import linkedin from "../../assets/img/social/linkedin.png";
 import github from "../../assets/img/social/github.png";
 
 import "./burger.scss";
+import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 const Burger = ({ burgerToggle, setBurgerToggle }) => {
+
   return (
     <div className="burger burger--close">
       <div
@@ -18,28 +21,77 @@ const Burger = ({ burgerToggle, setBurgerToggle }) => {
       </div>
       <ul className={"burger__link"}>
         <li>
-          <a href="http://localhost:3000/">Accueil</a>
+          <NavLink
+            exact
+            to="/"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+              });
+              setBurgerToggle(false);
+            }}
+          >
+            Accueil
+          </NavLink>
         </li>
         <li>
-          <a href="http://localhost:3000/">Présentation</a>
+          <NavHashLink
+            exact
+            to="#Presentation"
+            onClick={() => {
+              setBurgerToggle(false);
+            }}
+          >
+            Présentation
+          </NavHashLink>
         </li>
         <li>
-          <a href="http://localhost:3000/">Compétences</a>
+          <NavHashLink
+            exact
+            to="#Competences"
+            onClick={() => {
+              window.scrollTo(0, 50000);
+              setBurgerToggle(false);
+            }}
+          >
+            Compétences
+          </NavHashLink>
         </li>
         <li>
-          <a href="http://localhost:3000/"> Projets </a>
+          <NavHashLink
+            exact
+            to="#Projets"
+            onClick={() => {
+              setBurgerToggle(false);
+            }}
+          >
+            Projets
+          </NavHashLink>
         </li>
         <li>
-          <a href="http://localhost:3000/"> Contact </a>
+          <NavHashLink
+            exact
+            to="#Contact"
+            onClick={() => {
+              setBurgerToggle(false);
+            }}
+          >
+            Contact
+          </NavHashLink>
         </li>
       </ul>
       <div className="burger__social">
-        <a href="https://github.com/Nv974">
+        <NavLink exact to="https://github.com/Nv974">
           <img src={github} alt="github" />
-        </a>
-        <a href="https://www.linkedin.com/in/nicolas-vitry-0510711a1/">
+        </NavLink>
+        <NavLink
+          exact
+          to="https://www.linkedin.com/in/nicolas-vitry-0510711a1/"
+        >
           <img src={linkedin} alt="linkedin" />
-        </a>
+        </NavLink>
       </div>
     </div>
   );
