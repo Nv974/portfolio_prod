@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import Burger from "./burger";
 
 import "./nav.scss";
@@ -23,22 +22,22 @@ const Nav = () => {
     //console.log(window.scrollY);
     window.scrollY > 100 ? setNavActive(true) : setNavActive(false);
     if (
-      window.scrollY > windowHeight * 0.75 &&
-      window.scrollY < windowHeight * 1.62
+      window.scrollY > windowHeight * 0.8 &&
+      window.scrollY < windowHeight * 1.9
     ) {
       setTitle("Présentation");
     } else if (
-      window.scrollY > windowHeight * 1.62 &&
-      window.scrollY < windowHeight * 2.5
+      window.scrollY > windowHeight * 1.9 &&
+      window.scrollY < windowHeight * 2.9
     ) {
       setTitle("Compétences");
     } else if (
-      window.scrollY > windowHeight * 2.5 &&
-      window.scrollY < windowHeight * 3.3
+      window.scrollY > windowHeight * 2.9 &&
+      window.scrollY < windowHeight * 3.9
     ) {
       setTitle("Projets");
     } else if (
-      window.scrollY > windowHeight * 3.3 ) {
+      window.scrollY > windowHeight * 3.9 ) {
       setTitle("Contact");
     } else {setTitle("Acceuil")}   
   };
@@ -59,10 +58,8 @@ const Nav = () => {
         III
       </div>
       <ul className={navActive ? "nav__link--active" : "nav__link"}>
-        <li>
-          <NavLink
-            exact
-            to="/"
+        <li
+            href="#Home"
             onClick={() => {
               window.scrollTo({
                 top: 0,
@@ -72,71 +69,56 @@ const Nav = () => {
             }}
           >
             Accueil
-          </NavLink>
         </li>
-        <li>
-          <NavLink
-            exact
-            to="/Presentation"
+        <li
+            href="#Presentation"
             onClick={() => {
               window.scrollTo({
-                top: windowHeight * 0.89,
+                top: windowHeight ,
                 left: 0,
                 behavior: "smooth",
               });
             }}
           >
             Présentation
-          </NavLink>
         </li>
-        <li>
-          <NavLink
-            exact
-            to="Competences"
+        <li
+            href="#Competences"
             onClick={() => {
               window.scrollTo({
-                top: windowHeight * 1.78,
+                top: windowHeight * 2,
                 left: 0,
                 behavior: "smooth",
               });
             }}
           >
             Compétences
-          </NavLink>
         </li>
-        <li>
-          <NavLink
-            exact
-            to="Projet"
+        <li
             onClick={() => {
               window.scrollTo({
-                top: windowHeight * 2.67,
+                top: windowHeight * 3,
                 left: 0,
                 behavior: "smooth",
               });
             }}
           >
             Projets
-          </NavLink>
         </li>
-        <li>
-          <NavLink
-            exact
-            to="Contact"
+        <li
             onClick={() => {
               window.scrollTo({
-                top: windowHeight * 3.6,
+                top: windowHeight * 4,
                 left: 0,
                 behavior: "smooth",
               });
             }}
           >
             Contact
-          </NavLink>
         </li>
       </ul>
       {burgerToggle && (
-        <Burger burgerToggle={burgerToggle} setBurgerToggle={setBurgerToggle} />
+        <Burger burgerToggle={burgerToggle} setBurgerToggle={setBurgerToggle} windowHeight={windowHeight} />
       )}
     </div>
   );

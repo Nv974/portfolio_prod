@@ -7,7 +7,7 @@ import "./burger.scss";
 import { NavLink } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
-const Burger = ({ burgerToggle, setBurgerToggle }) => {
+const Burger = ({ burgerToggle, setBurgerToggle, windowHeight }) => {
 
   return (
     <div className="burger burger--close">
@@ -20,10 +20,7 @@ const Burger = ({ burgerToggle, setBurgerToggle }) => {
         <img src={close} alt="fermer" />
       </div>
       <ul className={"burger__link"}>
-        <li>
-          <NavLink
-            exact
-            to="/"
+        <li
             onClick={() => {
               window.scrollTo({
                 top: 0,
@@ -34,52 +31,54 @@ const Burger = ({ burgerToggle, setBurgerToggle }) => {
             }}
           >
             Accueil
-          </NavLink>
         </li>
-        <li>
-          <NavHashLink
-            exact
-            to="#Presentation"
+        <li
             onClick={() => {
+              window.scrollTo({
+                top: windowHeight,
+                left: 0,
+                behavior: "smooth",
+              });
               setBurgerToggle(false);
             }}
           >
             Présentation
-          </NavHashLink>
         </li>
-        <li>
-          <NavHashLink
-            exact
-            to="#Competences"
+        <li
             onClick={() => {
-              window.scrollTo(0, 50000);
+              window.scrollTo({
+                top: windowHeight * 2,
+                left: 0,
+                behavior: "smooth",
+              });
               setBurgerToggle(false);
             }}
           >
             Compétences
-          </NavHashLink>
         </li>
-        <li>
-          <NavHashLink
-            exact
-            to="#Projets"
+        <li
             onClick={() => {
+              window.scrollTo({
+                top: windowHeight * 3,
+                left: 0,
+                behavior: "smooth",
+              });
               setBurgerToggle(false);
             }}
           >
             Projets
-          </NavHashLink>
         </li>
-        <li>
-          <NavHashLink
-            exact
-            to="#Contact"
+        <li
             onClick={() => {
+              window.scrollTo({
+                top: windowHeight * 4.02,
+                left: 0,
+                behavior: "smooth",
+              });
               setBurgerToggle(false);
             }}
           >
             Contact
-          </NavHashLink>
         </li>
       </ul>
       <div className="burger__social">

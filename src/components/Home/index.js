@@ -48,7 +48,7 @@ const Home = () => {
 
 
   return (
-    <div className="home">
+    <div className="home" id="Home">
       <div className="home__left" data-aos="fade-left">
         <span className="home__left__name">Nicolas Vitry</span>
         <span className="home__left__job">Développeur Web</span>

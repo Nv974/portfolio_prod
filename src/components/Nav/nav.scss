@@ -56,26 +56,19 @@
       padding: 0 1rem;
       font-size: 1.1rem;
       font-weight: bold;
-
-      a {
-        text-decoration: none;
-        color: white;
-        transition: 0.4s;
-        cursor: pointer;
+      cursor: pointer;
+      transition: 0.4s;
 
         &:hover {
           color: vars.$main;
         }
-      }
     }
 
     &--active {
       li {
-        a {
           &:hover {
             color: black;
           }
-        }
       }
     }
   }

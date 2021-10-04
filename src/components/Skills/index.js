@@ -80,7 +80,7 @@ const Skills = () => {
           </div>
           <div className="skills__environnement__technos__ubuntu">
             <img src={ubuntu} alt="linux ubuntu" />
-            <div>Ubuntu</div>
+            <div>Linux</div>
           </div>
           <div className="skills__environnement__technos__git">
             <img src={git} alt="git" />
