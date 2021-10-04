@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import Burger from "./burger";
 
 import "./nav.scss";
@@ -60,9 +59,8 @@ const Nav = () => {
       </div>
       <ul className={navActive ? "nav__link--active" : "nav__link"}>
         <li>
-          <NavLink
-            exact
-            to="/"
+          <a
+            href="/"
             onClick={() => {
               window.scrollTo({
                 top: 0,
@@ -72,12 +70,11 @@ const Nav = () => {
             }}
           >
             Accueil
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            exact
-            to="/Presentation"
+          <a
+            href="/Presentation"
             onClick={() => {
               window.scrollTo({
                 top: windowHeight * 0.89,
@@ -87,12 +84,11 @@ const Nav = () => {
             }}
           >
             Présentation
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            exact
-            to="Competences"
+          <a
+            href="/Competences"
             onClick={() => {
               window.scrollTo({
                 top: windowHeight * 1.78,
@@ -102,12 +98,11 @@ const Nav = () => {
             }}
           >
             Compétences
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            exact
-            to="Projet"
+          <a
+            href="/Projets"
             onClick={() => {
               window.scrollTo({
                 top: windowHeight * 2.67,
@@ -117,12 +112,11 @@ const Nav = () => {
             }}
           >
             Projets
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            exact
-            to="Contact"
+          <a
+            href="/Contact"
             onClick={() => {
               window.scrollTo({
                 top: windowHeight * 3.6,
@@ -132,7 +126,7 @@ const Nav = () => {
             }}
           >
             Contact
-          </NavLink>
+          </a>
         </li>
       </ul>
       {burgerToggle && (

@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import phone from "../../assets/img/contact/telephone.png";
 import mail from "../../assets/img/contact/mail.png";
 import map from "../../assets/img/contact/map.png";
 import emailjs from "emailjs-com";
-import { useState } from "react/cjs/react.development";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./contact.scss";
 
 const Contact = () => {
+  
   const [formName, setFormName] = useState("");
   const [formMail, setFormMail] = useState("");
   const [formPhone, setFormPhone] = useState("");
   const [formCompany, setFormCompany] = useState("");
   const [formObject, setFormObject] = useState("");
   const [formMessage, setFormMessage] = useState("");
+
+
   const sendIsOk = () =>
     toast.success("Message envoyé", {
       position: "bottom-center",
@@ -41,7 +43,7 @@ const Contact = () => {
   const sendMessage = (event) => {
     event.preventDefault();
 
-   /* emailjs
+    emailjs
       .sendForm(
         "service_v6uky3m",
         "template_sc10diy",
@@ -58,7 +60,7 @@ const Contact = () => {
           notSend();
         }
       );
-    event.target.reset();*/
+    event.target.reset();
   };
 
   return (
