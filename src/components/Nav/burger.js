@@ -59,7 +59,7 @@ const Burger = ({ burgerToggle, setBurgerToggle, windowHeight }) => {
         <li
             onClick={() => {
               window.scrollTo({
-                top: windowHeight * 3,
+                top: windowHeight * 3.2,
                 left: 0,
                 behavior: "smooth",
               });
@@ -71,7 +71,7 @@ const Burger = ({ burgerToggle, setBurgerToggle, windowHeight }) => {
         <li
             onClick={() => {
               window.scrollTo({
-                top: windowHeight * 4.02,
+                top: windowHeight * 4.1,
                 left: 0,
                 behavior: "smooth",
               });
